@@ -9,6 +9,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Expires" CONTENT="-1">
+
     <title>Landing Page - Start Bootstrap Theme</title>
 
     <!-- Mapbox.js -->
@@ -31,7 +34,10 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <style>
+      body { margin:0; padding:0; }
+      .map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
 </head>
 
 <body>
@@ -69,14 +75,7 @@
     </nav>
 
     <!-- Mapbox -->
-      <div id='map' style='width: 400px; height: 300px;'></div>
-      <script>
-      mapboxgl.accessToken = 'pk.eyJ1Ijoid2luc3Rvbm1pIiwiYSI6ImNpcmx2NTJ5MjAwNWJmYW02bGZiMmN6ZmMifQ.DfLwDrBNUttzcAazjo6pqw';
-      var map = new mapboxgl.Map({
-          container: 'map',
-          style: 'mapbox://styles/winstonmi/cirlv6hej000zhrm9txn0zieo'
-      });
-      </script>
+    <div id='map-one' class='map'> </div>
 
     <!-- Header -->
     <a name="about"></a>
@@ -242,6 +241,11 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
+    <!-- Mapbox.js -->
+    <script>
+    L.mapbox.accessToken = 'pk.eyJ1Ijoid2luc3Rvbm1pIiwiYSI6ImNpcmx2NTJ5MjAwNWJmYW02bGZiMmN6ZmMifQ.DfLwDrBNUttzcAazjo6pqw';
+      L.mapbox.map('map-one', 'mapbox.streets').setView([38.8929,-77.0252], 14);
+    </script>
 </body>
 
 </html>
